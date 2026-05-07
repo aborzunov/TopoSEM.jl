@@ -1,0 +1,39 @@
+source_files = ["/Users/aborzunov/Developer/TopoSEM.jl/resources/May/46.jpg", "/Users/aborzunov/Developer/TopoSEM.jl/resources/May/47.jpg", "/Users/aborzunov/Developer/TopoSEM.jl/resources/May/40.jpg", "/Users/aborzunov/Developer/TopoSEM.jl/resources/May/41.jpg"]
+sample = "may_crooked_30"
+description = "May crooked-pyramid sample at 30° detector tilt, 4 BSE quadrants (A=46.jpg, B=47.jpg, C=40.jpg, D=41.jpg)."
+
+[provenance]
+julia_version = "1.12.5"
+timestamp = "2026-05-07T17:56:15.851"
+toposem_version = "0.1.0"
+
+[calibration]
+method = "none"
+detrend_planar = true
+planar_tilt_col = -0.02789320423939259
+planar_tilt_row = -0.0164098789952501
+
+[geometry]
+pixel_size_um = 0.09740259740259741
+detector_angles_rad = [0.0, 1.5707963267948966, 3.141592653589793, 4.71238898038469]
+crop_rows = 799
+
+[reconstruction]
+tol = 0.0001
+use_laplacian = false
+max_iter = 60
+fourier_padding = "mirror"
+weight_sigma = 0.0
+poly_order = 2
+use_wide_fov = false
+
+[result]
+final_dh_norm = 246.6100918874813
+h_min = -332.0942642027529
+h_std = 67.6363088254872
+final_residual = 5506.223637363581
+iterations = 60
+size_rows = 799
+h_max = 210.1143161227483
+converged = false
+size_cols = 1024

@@ -1,0 +1,41 @@
+source_files = ["/Users/aborzunov/Developer/TopoSEM.jl/resources/Jun/pyramid/Q1.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Jun/pyramid/Q2.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Jun/pyramid/Q3.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Jun/pyramid/Q4.tif"]
+sample = "jun_vickers_exp1"
+description = "Jun-series Vickers indent — EXPERIMENT №1: reconstructed with poly_order = 1 (linear φ). The indent walls are essentially vertical and the linear model cannot represent them; preserved as a contrast to the working poly_order = 2 result in jun_vickers."
+
+[provenance]
+julia_version = "1.12.5"
+timestamp = "2026-05-07T17:29:00.351"
+toposem_version = "0.1.0"
+
+[calibration]
+method = "peak_to_trough"
+detrend_planar = true
+scale_factor = 0.012842336669627292
+known_value_um = 6.0
+planar_tilt_col = 0.04090803537493869
+planar_tilt_row = -0.0379981726102833
+
+[geometry]
+pixel_size_um = 0.10416666666666667
+detector_angles_rad = [0.0, 1.5707963267948966, 3.141592653589793, 4.71238898038469]
+crop_rows = 668
+
+[reconstruction]
+tol = 1.0e-5
+use_laplacian = false
+max_iter = 200
+fourier_padding = "mirror"
+weight_sigma = 0.0
+poly_order = 1
+use_wide_fov = false
+
+[result]
+final_dh_norm = 106.83863261854262
+h_min = -4.170871713786195
+h_std = 0.7815285995710787
+final_residual = 15157.889740760631
+iterations = 200
+size_rows = 668
+h_max = 1.829128286213805
+converged = false
+size_cols = 1024

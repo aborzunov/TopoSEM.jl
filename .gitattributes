@@ -1,0 +1,13 @@
+* text=auto eol=lf
+
+*.jl    text
+*.md    text
+*.toml  text
+Makefile text
+
+*.tif   binary
+*.tiff  binary
+*.jpg   binary
+*.jpeg  binary
+*.png   binary
+*.pdf   binary

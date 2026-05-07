@@ -1,0 +1,39 @@
+source_files = ["/Users/aborzunov/Developer/TopoSEM.jl/resources/May/34.jpg", "/Users/aborzunov/Developer/TopoSEM.jl/resources/May/35.jpg", "/Users/aborzunov/Developer/TopoSEM.jl/resources/May/26.jpg", "/Users/aborzunov/Developer/TopoSEM.jl/resources/May/27.jpg"]
+sample = "may_piezoceramic"
+description = "May piezoceramic sample — microcracked surface, 4 BSE quadrants (A=34.jpg, B=35.jpg, C=26.jpg, D=27.jpg)."
+
+[provenance]
+julia_version = "1.12.5"
+timestamp = "2026-05-07T17:51:59.315"
+toposem_version = "0.1.0"
+
+[calibration]
+method = "none"
+detrend_planar = true
+planar_tilt_col = -0.011448701783763768
+planar_tilt_row = -0.18754660179429172
+
+[geometry]
+pixel_size_um = 0.05847953216374269
+detector_angles_rad = [0.0, 1.5707963267948966, 3.141592653589793, 4.71238898038469]
+crop_rows = 879
+
+[reconstruction]
+tol = 0.0001
+use_laplacian = false
+max_iter = 60
+fourier_padding = "mirror"
+weight_sigma = 0.0
+poly_order = 2
+use_wide_fov = false
+
+[result]
+final_dh_norm = 16106.849003487949
+h_min = -137.43407088023665
+h_std = 52.10108183448198
+final_residual = 41059.6047745609
+iterations = 60
+size_rows = 879
+h_max = 267.01632738391913
+converged = false
+size_cols = 1024

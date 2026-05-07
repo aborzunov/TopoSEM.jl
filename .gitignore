@@ -1,0 +1,21 @@
+CLAUDE.md
+
+# Manifest.toml is Julia-version-specific (stdlib UUIDs and JLL
+# resolution differ between minor versions). Don't ship it — let
+# `Pkg.instantiate()` resolve fresh from Project.toml [compat] on
+# each user's / CI job's Julia version. Matches the standard Julia
+# package convention for non-application repos.
+Manifest.toml
+
+# Pre-computed reconstructions are NOT shipped (~40 MB, regenerable
+# via `make -k all`). The pre-rendered PNGs in data/ stay in the repo
+# so the data/README.md gallery and the top-level abstract figure
+# render on GitHub without cloning.
+data/*_h.csv.gz
+
+.DS_Store
+**/.DS_Store
+
+*.swp
+*.swo
+*~

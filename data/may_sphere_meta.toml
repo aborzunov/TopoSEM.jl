@@ -1,0 +1,41 @@
+source_files = ["/Users/aborzunov/Developer/TopoSEM.jl/resources/May/13.jpg", "/Users/aborzunov/Developer/TopoSEM.jl/resources/May/16.jpg", "/Users/aborzunov/Developer/TopoSEM.jl/resources/May/1.jpg", "/Users/aborzunov/Developer/TopoSEM.jl/resources/May/4.jpg"]
+sample = "may_sphere"
+description = "May calibration sphere — 4 BSE quadrants (A=13.jpg, B=16.jpg, C=1.jpg, D=4.jpg). Used as the apparatus-function calibration target in the companion SurfaceTopography.jl pipeline."
+
+[provenance]
+julia_version = "1.12.5"
+timestamp = "2026-05-07T17:49:43.861"
+toposem_version = "0.1.0"
+
+[calibration]
+method = "peak_to_trough"
+detrend_planar = true
+scale_factor = 0.013745477584598188
+known_value_um = 100.0
+planar_tilt_col = 1.9442537614120792
+planar_tilt_row = 1.0727243040212728
+
+[geometry]
+pixel_size_um = 0.3246753246753247
+detector_angles_rad = [0.0, 1.5707963267948966, 3.141592653589793, 4.71238898038469]
+crop_rows = 796
+
+[reconstruction]
+tol = 0.0001
+use_laplacian = false
+max_iter = 60
+fourier_padding = "mirror"
+weight_sigma = 0.0
+poly_order = 2
+use_wide_fov = false
+
+[result]
+final_dh_norm = 52652.989837258516
+h_min = -48.564209483774114
+h_std = 20.722585194106536
+final_residual = 57083.21198228808
+iterations = 60
+size_rows = 796
+h_max = 51.435790516225886
+converged = false
+size_cols = 1024

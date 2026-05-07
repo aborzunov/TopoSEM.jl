@@ -1,0 +1,39 @@
+source_files = ["/Users/aborzunov/Developer/TopoSEM.jl/resources/Feb/SA.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Feb/SB.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Feb/SC.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Feb/SD.tif"]
+sample = "feb_S"
+description = "Feb sphere sample (SA..SD), 4-quadrant BSE."
+
+[provenance]
+julia_version = "1.12.5"
+timestamp = "2026-05-07T17:45:34.049"
+toposem_version = "0.1.0"
+
+[calibration]
+method = "none"
+detrend_planar = true
+planar_tilt_col = -1.3779419257645193
+planar_tilt_row = -1.7120395051355473
+
+[geometry]
+pixel_size_um = 0.36363636363636365
+detector_angles_rad = [0.0, 1.5707963267948966, 3.141592653589793, 4.71238898038469]
+crop_rows = 796
+
+[reconstruction]
+tol = 0.0001
+use_laplacian = false
+max_iter = 60
+fourier_padding = "mirror"
+weight_sigma = 0.0
+poly_order = 2
+use_wide_fov = false
+
+[result]
+final_dh_norm = 81593.0740229768
+h_min = -5504.901288670809
+h_std = 2314.037019629843
+final_residual = 51460.71008032743
+iterations = 60
+size_rows = 796
+h_max = 4941.567698427948
+converged = false
+size_cols = 1024

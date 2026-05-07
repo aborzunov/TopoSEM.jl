@@ -1,0 +1,39 @@
+source_files = ["/Users/aborzunov/Developer/TopoSEM.jl/resources/Feb/PRA.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Feb/PRB.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Feb/PRC.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Feb/PRD.tif"]
+sample = "feb_PR"
+description = "Feb 'crooked pyramid' sample (PRA..PRD), rotated/skewed pyramidal feature, 4-quadrant BSE."
+
+[provenance]
+julia_version = "1.12.5"
+timestamp = "2026-05-07T17:43:37.425"
+toposem_version = "0.1.0"
+
+[calibration]
+method = "none"
+detrend_planar = true
+planar_tilt_col = 0.015342620943297969
+planar_tilt_row = 0.06503260042695948
+
+[geometry]
+pixel_size_um = 0.09740259740259741
+detector_angles_rad = [0.0, 1.5707963267948966, 3.141592653589793, 4.71238898038469]
+crop_rows = 796
+
+[reconstruction]
+tol = 0.0001
+use_laplacian = false
+max_iter = 60
+fourier_padding = "mirror"
+weight_sigma = 0.0
+poly_order = 2
+use_wide_fov = false
+
+[result]
+final_dh_norm = 682.3124244125245
+h_min = -180.2367224587473
+h_std = 143.55693807221422
+final_residual = 15115.346681481993
+iterations = 60
+size_rows = 796
+h_max = 673.4399265527146
+converged = false
+size_cols = 1024

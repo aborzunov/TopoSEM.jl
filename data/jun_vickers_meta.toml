@@ -1,0 +1,41 @@
+source_files = ["/Users/aborzunov/Developer/TopoSEM.jl/resources/Jun/pyramid/Q1.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Jun/pyramid/Q2.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Jun/pyramid/Q3.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Jun/pyramid/Q4.tif"]
+sample = "jun_vickers"
+description = "Jun-series Vickers hardness indent (Jun/Q1..Q4) — square pyramidal impression made by a diamond indenter (136° face angle)."
+
+[provenance]
+julia_version = "1.12.5"
+timestamp = "2026-05-07T17:24:38.250"
+toposem_version = "0.1.0"
+
+[calibration]
+method = "peak_to_trough"
+detrend_planar = true
+scale_factor = 0.0009809088433521886
+known_value_um = 6.0
+planar_tilt_col = -28.773845697124624
+planar_tilt_row = 19.684687087531003
+
+[geometry]
+pixel_size_um = 0.10416666666666667
+detector_angles_rad = [0.0, 1.5707963267948966, 3.141592653589793, 4.71238898038469]
+crop_rows = 668
+
+[reconstruction]
+tol = 1.0e-5
+use_laplacian = false
+max_iter = 200
+fourier_padding = "mirror"
+weight_sigma = 0.0
+poly_order = 2
+use_wide_fov = false
+
+[result]
+final_dh_norm = 54541.60650852165
+h_min = -4.642033733008241
+h_std = 0.7812636389406502
+final_residual = 30159.1103815526
+iterations = 200
+size_rows = 668
+h_max = 1.357966266991758
+converged = false
+size_cols = 1024

@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+  workflow_dispatch:
+
+# Cancel in-progress runs for the same branch when a new commit lands.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: Julia ${{ matrix.julia-version }} / ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        julia-version:
+          - '1.10'   # LTS — minimum supported (Project.toml [compat] julia)
+          - '1'      # current stable
+        os:
+          - ubuntu-latest
+          - macos-latest
+    steps:
+      - name: Checkout (without LFS)
+        # Tests are self-contained and don't read data/ or resources/, so
+        # we skip Git LFS pulls — saves bandwidth and avoids LFS quota.
+        uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - name: Set up Julia
+        uses: julia-actions/setup-julia@v2
+        with:
+          version: ${{ matrix.julia-version }}
+
+      - name: Cache Julia depot
+        uses: julia-actions/cache@v2
+
+      - name: Build package
+        uses: julia-actions/julia-buildpkg@v1
+
+      - name: Run tests
+        uses: julia-actions/julia-runtest@v1
+        with:
+          # Use the package's [targets].test config (Pkg.test semantics).
+          # The visualisation stack (GLMakie, CairoMakie) lives in
+          # examples/Project.toml and is intentionally NOT instantiated
+          # here — tests don't need OpenGL.
+          project: '.'

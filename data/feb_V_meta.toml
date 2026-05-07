@@ -1,0 +1,39 @@
+source_files = ["/Users/aborzunov/Developer/TopoSEM.jl/resources/Feb/VA.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Feb/VB.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Feb/VC.tif", "/Users/aborzunov/Developer/TopoSEM.jl/resources/Feb/VD.tif"]
+sample = "feb_V"
+description = "Feb V-groove sample (VA..VD), 4-quadrant BSE."
+
+[provenance]
+julia_version = "1.12.5"
+timestamp = "2026-05-07T17:47:46.493"
+toposem_version = "0.1.0"
+
+[calibration]
+method = "none"
+detrend_planar = true
+planar_tilt_col = 0.012961751276944416
+planar_tilt_row = 0.01763719150593512
+
+[geometry]
+pixel_size_um = 0.04926108374384237
+detector_angles_rad = [0.0, 1.5707963267948966, 3.141592653589793, 4.71238898038469]
+crop_rows = 879
+
+[reconstruction]
+tol = 0.0001
+use_laplacian = false
+max_iter = 60
+fourier_padding = "mirror"
+weight_sigma = 0.0
+poly_order = 2
+use_wide_fov = false
+
+[result]
+final_dh_norm = 258.20547012406735
+h_min = -49.95748066929069
+h_std = 18.58846875012005
+final_residual = 16625.72080507378
+iterations = 60
+size_rows = 879
+h_max = 99.3748125442916
+converged = false
+size_cols = 1024
