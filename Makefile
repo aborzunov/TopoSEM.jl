@@ -57,6 +57,16 @@ data/%_h.csv.gz data/%_meta.toml: scripts/reconstruct_%.jl $(SCRIPT_COMMON) $(SR
 	@mkdir -p data
 	$(JULIA) $<
 
+# Override for `jun_sphere_exp3` — documented intentional-failing experiment
+# (cubic φ diverges into Inf/NaN around iter ~105, see README §«Polynomial-
+# order observation»). The leading `-` makes Make print the failure but NOT
+# propagate a non-zero exit, so `make -k all` finishes cleanly after the
+# other 12 samples are up-to-date instead of returning Error 2.
+data/jun_sphere_exp3_h.csv.gz data/jun_sphere_exp3_meta.toml: \
+		scripts/reconstruct_jun_sphere_exp3.jl $(SCRIPT_COMMON) $(SRC)
+	@mkdir -p data
+	-$(JULIA) $<
+
 # Per-sample shortcuts.
 jun_vickers:       data/jun_vickers_h.csv.gz
 jun_vickers_exp1:  data/jun_vickers_exp1_h.csv.gz
